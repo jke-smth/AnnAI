@@ -1,7 +1,7 @@
 from PySide6 import QtWidgets
 from PySide6.QtCore import Slot
 
-from .widgets.led_indicator import LedIndicator
+from annai.ui.widgets.led_indicator import LedIndicator
 
 class MainWindow(QtWidgets.QMainWindow):
     def __init__(self):

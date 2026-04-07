@@ -1,6 +1,6 @@
 from PySide6.QtCore import QObject, Slot, QTimer
 from PySide6 import QtWidgets
-from controllers.logger import setup_logger
+from annai.controllers.logger import setup_logger
 
 
 class ExecutionStateMachine:

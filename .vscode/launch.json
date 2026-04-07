@@ -2,10 +2,10 @@
   "version": "0.2.0",
   "configurations": [
     {
-      "name": "Run main.py",
+      "name": "Run annai as module",
       "type": "python",
       "request": "launch",
-      "program": "${workspaceFolder}/annai/main.py",
+      "module": "annai.main",
       "console": "integratedTerminal",
       "justMyCode": false
     }
