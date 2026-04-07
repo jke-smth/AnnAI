@@ -13,8 +13,6 @@ class LedIndicator(QtWidgets.QWidget):
         self._color = QtGui.QColor(color)
         self.update()
 
-
-
     def _toggle(self):
         self._is_on = not self._is_on
         self.update()

@@ -130,10 +130,20 @@ class MainController(QObject):
         qt_handler.log_signal.connect(self.view.update_log)
         self.logger.info("Logger connected")
 
-        valid_sends = ["None", "Prompt A", "Prompt B", "Prompt C", "Instructions A", "Instructions B", "Instructions C", "TTS"]
-        self.view.send_target_A_combo.addItems(valid_sends)
-        self.view.send_target_B_combo.addItems(valid_sends)
-        self.view.send_target_C_combo.addItems(valid_sends)
+        valid_response_sends = ["None", "Prompt A", "Prompt B", "Prompt C", "Instructions A", "Instructions B", "Instructions C", "TTS"]
+        self.view.send_target_A_combo.addItems(valid_response_sends)
+        self.view.send_target_B_combo.addItems(valid_response_sends)
+        self.view.send_target_C_combo.addItems(valid_response_sends)
+
+        valid_instruction_pulls = ["None", "Response A", "Response B", "Response C"]
+        self.view.pull_instructions_target_A_combo.addItems(valid_instruction_pulls)
+        self.view.pull_instructions_target_B_combo.addItems(valid_instruction_pulls)
+        self.view.pull_instructions_target_C_combo.addItems(valid_instruction_pulls)
+
+        valid_prompt_pulls = ["None", "Response A", "Response B", "Response C"]
+        self.view.pull_to_prompt_target_A_combo.addItems(valid_prompt_pulls)
+        self.view.pull_to_prompt_target_B_combo.addItems(valid_prompt_pulls)
+        self.view.pull_to_prompt_target_C_combo.addItems(valid_prompt_pulls)
 
         self._connect_signals()
 
@@ -162,9 +172,9 @@ class MainController(QObject):
         self.view.trigger_B_button.clicked.connect(self.trigger_B)
         self.view.trigger_C_button.clicked.connect(self.trigger_C)
 
-        self.view.pull_to_instructions_A_button.clicked.connect(self.trigger_pull_to_prompt_A)
-        self.view.pull_to_instructions_B_button.clicked.connect(self.trigger_pull_to_prompt_B)
-        self.view.pull_to_instructions_C_button.clicked.connect(self.trigger_pull_to_prompt_C)
+        self.view.pull_to_instructions_A_button.clicked.connect(self.trigger_pull_to_instructions_A)
+        self.view.pull_to_instructions_B_button.clicked.connect(self.trigger_pull_to_instructions_B)
+        self.view.pull_to_instructions_C_button.clicked.connect(self.trigger_pull_to_instructions_C)
 
         self.view.clear_instructions_A_button.clicked.connect(self.clear_instructions_A)
         self.view.clear_instructions_B_button.clicked.connect(self.clear_instructions_B)

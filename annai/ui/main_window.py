@@ -13,8 +13,6 @@ class MainWindow(QtWidgets.QMainWindow):
         central = QtWidgets.QWidget()
         self.setCentralWidget(central)
 
-        self.valid_sends = []
-
         main_layout = QtWidgets.QVBoxLayout(central)
 
         button_layout = QtWidgets.QHBoxLayout()
@@ -67,11 +65,17 @@ class MainWindow(QtWidgets.QMainWindow):
         self.pull_to_instructions_A_button = QtWidgets.QPushButton("Pull Instructions")
         controls_A.addWidget(self.pull_to_instructions_A_button)
 
+        self.pull_instructions_target_A_combo = QtWidgets.QComboBox()
+        controls_A.addWidget(self.pull_instructions_target_A_combo)
+
         self.clear_instructions_A_button = QtWidgets.QPushButton("Clear Instructions")
         controls_A.addWidget(self.clear_instructions_A_button)
 
         self.trigger_pull_to_prompt_A_button = QtWidgets.QPushButton("Pull Prompt")
         controls_A.addWidget(self.trigger_pull_to_prompt_A_button)
+
+        self.pull_to_prompt_target_A_combo = QtWidgets.QComboBox()
+        controls_A.addWidget(self.pull_to_prompt_target_A_combo)
 
         self.trigger_A_button = QtWidgets.QPushButton("Prompt")
         controls_A.addWidget(self.trigger_A_button)
@@ -121,11 +125,17 @@ class MainWindow(QtWidgets.QMainWindow):
         self.pull_to_instructions_B_button = QtWidgets.QPushButton("Pull Instructions")
         controls_B.addWidget(self.pull_to_instructions_B_button)
 
+        self.pull_instructions_target_B_combo = QtWidgets.QComboBox()
+        controls_B.addWidget(self.pull_instructions_target_B_combo)
+
         self.clear_instructions_B_button = QtWidgets.QPushButton("Clear Instructions")
         controls_B.addWidget(self.clear_instructions_B_button)
     
         self.trigger_pull_to_prompt_B_button = QtWidgets.QPushButton("Pull Prompt")
         controls_B.addWidget(self.trigger_pull_to_prompt_B_button)
+
+        self.pull_to_prompt_target_B_combo = QtWidgets.QComboBox()
+        controls_B.addWidget(self.pull_to_prompt_target_B_combo)
 
         self.trigger_B_button = QtWidgets.QPushButton("Prompt")
         controls_B.addWidget(self.trigger_B_button)
@@ -175,11 +185,17 @@ class MainWindow(QtWidgets.QMainWindow):
         self.pull_to_instructions_C_button = QtWidgets.QPushButton("Pull Instructions")
         controls_C.addWidget(self.pull_to_instructions_C_button)
 
+        self.pull_instructions_target_C_combo = QtWidgets.QComboBox()
+        controls_C.addWidget(self.pull_instructions_target_C_combo)
+
         self.clear_instructions_C_button = QtWidgets.QPushButton("Clear Instructions")
         controls_C.addWidget(self.clear_instructions_C_button)
 
         self.trigger_pull_to_prompt_C_button = QtWidgets.QPushButton("Pull Prompt")
         controls_C.addWidget(self.trigger_pull_to_prompt_C_button)
+
+        self.pull_to_prompt_target_C_combo = QtWidgets.QComboBox()
+        controls_C.addWidget(self.pull_to_prompt_target_C_combo)
 
         self.trigger_C_button = QtWidgets.QPushButton("Prompt")
         controls_C.addWidget(self.trigger_C_button)
