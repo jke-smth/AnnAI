@@ -131,15 +131,10 @@ class MainController(QObject):
         self.logger.info(f"Triggering {key}")
         panel = self.panels[key]
         sm = self.machines.get(key)
-        # Todo: trigger the panel but check if the trigger went through,
-        # if not, wait until the panel is ready and then trigger it 
-        # (this is to handle the case where the user tries to trigger a panel 
-        # that's still running its previous task)
         if sm:
-            if not sm.trigger():
-                # if trigger returns False, it means the panel is not ready, 
-                # so we wait and try again
-                QTimer.singleShot(1000, lambda: self.trigger(key))
+            success = sm.trigger()
+            if not success:
+                self.logger.warning(f"Failed to trigger {key} - invalid state")
                 
 
     def send_response(self, key):
