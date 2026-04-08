@@ -1,7 +1,7 @@
 import sys
 from PySide6.QtWidgets import QApplication
 
-from annai.ui.main_window import MainWindow
+from annai.ui.views.main_window import MainWindow
 from annai.controllers.main_controller import MainController
 
 
