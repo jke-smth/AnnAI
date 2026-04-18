@@ -39,17 +39,21 @@ class PromptPanel(QtWidgets.QWidget):
 
         self.pull_to_instructions_button = QtWidgets.QPushButton("Pull Instructions")
         self.pull_instructions_target_combo = QtWidgets.QComboBox()
+        self.pull_instructions_mode_combo = QtWidgets.QComboBox()
         self.clear_instructions_button = QtWidgets.QPushButton("Clear Instructions")
 
         controls.addWidget(self.pull_to_instructions_button)
         controls.addWidget(self.pull_instructions_target_combo)
+        controls.addWidget(self.pull_instructions_mode_combo)
         controls.addWidget(self.clear_instructions_button)
 
         self.pull_to_prompt_button = QtWidgets.QPushButton("Pull Prompt")
         self.pull_to_prompt_target_combo = QtWidgets.QComboBox()
+        self.pull_to_prompt_mode_combo = QtWidgets.QComboBox()
 
         controls.addWidget(self.pull_to_prompt_button)
         controls.addWidget(self.pull_to_prompt_target_combo)
+        controls.addWidget(self.pull_to_prompt_mode_combo)
 
         self.trigger_button = QtWidgets.QPushButton("Prompt")
         self.clear_prompt_button = QtWidgets.QPushButton("Clear Prompt")

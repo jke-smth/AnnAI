@@ -10,6 +10,26 @@ class PanelState(Enum):
     END_STAGE = "end_stage"
     STOPPED = "stopped"
 
+# panel state to color map
+
+# my colors:
+# - idle: gray
+# - init_trigger: ffee83
+# - init_stage: f0b541
+# - end_trigger: ffc2a1
+# - end_stage: ffae70
+# - stopped: black
+
+# Todo: need to change these to qcolor names or hex strings with # prefix, and update the default_color_map accordingly. For now, we can assume the LED widget can handle these color formats directly.
+default_color_map = {
+    PanelState.IDLE: "#808080",
+    PanelState.INIT_TRIGGER: "#ffee83",
+    PanelState.INIT_STAGE: "#f0b541",
+    PanelState.END_TRIGGER: "#ffc2a1",
+    PanelState.END_STAGE: "#92e8c0",
+    PanelState.STOPPED: "#e64539",
+}
+
 
 class BaseStateMachine:
     """A small state machine with observer support and color mapping.
@@ -23,14 +43,8 @@ class BaseStateMachine:
         self.logger = logger
         self._observers: List[Callable[[PanelState], None]] = []
         # default color mapping (can be overridden by passing color_map)
-        self._color_map: Dict[PanelState, str] = color_map or {
-            PanelState.IDLE: "gray",
-            PanelState.INIT_TRIGGER: "yellow",
-            PanelState.INIT_STAGE: "green",
-            PanelState.END_TRIGGER: "orange",
-            PanelState.END_STAGE: "blue",
-            PanelState.STOPPED: "red",
-        }
+        self._color_map: Dict[PanelState, str] = color_map or default_color_map 
+        
 
     def _log(self, msg: str) -> None:
         if self.logger:
